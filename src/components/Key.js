@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import styled from 'styled-components';
 
-const Key = ({ label }) => (
-  <button>
-    { label }
-  </button>
-);
+const Key = styled.button`
+  height: 30px;
+  padding: 0 4px;
+  width: 70px;
+`;
 
-export default Key;
+const Container = ({ label, result, setResult }) => {
+  const updateDisplay = useCallback(
+    () => {
+      setResult(result + label)
+    },
+    [label, result, setResult],
+  );
+
+  return (
+    <Key onClick={updateDisplay}>
+      {label}
+    </Key>
+  );
+};
+
+export default Container;
