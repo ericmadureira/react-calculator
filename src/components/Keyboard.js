@@ -1,18 +1,31 @@
 import React, { useMemo } from 'react';
+import styled from 'styled-components';
 
 import { calcKeys } from '../constants';
 import Key from './Key';
 
-const Keyboard = () => {
+const Keyboard = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`;
+
+const Container = ({ result, setResult }) => {
   const keyboard = useMemo(() => (
-    calcKeys.map(key => <Key label={key} />)
-  ), []);
+    calcKeys.map(key =>
+      <Key
+        label={key}
+        result={result}
+        setResult={setResult}
+      />
+    )
+  ), [result, setResult]);
 
   return (
-    <div className='keyboard'>
+    <Keyboard>
       {keyboard}
-    </div>
+    </Keyboard>
   );
 }
 
-export default Keyboard;
+export default Container;
