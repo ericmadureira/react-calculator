@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Display = () => (
-  <div>
-    
-  </div>
+  <input type='text'/>
 );
 
 export default Display;
