@@ -3,12 +3,18 @@ import Keyboard from './Keyboard'
 import Display from './Display';
 
 const Calculator = () => {
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState('');
 
   return (
     <div>
-      <Display />
-      <Keyboard />
+      <Display
+        result={result}
+        setResult={setResult}
+      />
+      <Keyboard
+        result={result}
+        setResult={setResult}
+      />
     </div>
   );
 };
