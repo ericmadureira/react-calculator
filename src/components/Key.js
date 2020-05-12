@@ -10,6 +10,10 @@ const Key = styled.button`
 const Container = ({ label, result, setResult }) => {
   const updateDisplay = useCallback(
     () => {
+      if(label === 'Clear') {
+        setResult('');
+        return;
+      }
       setResult(result + label)
     },
     [label, result, setResult],
