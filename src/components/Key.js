@@ -10,11 +10,16 @@ const Key = styled.button`
 const Container = ({ label, result, setResult }) => {
   const updateDisplay = useCallback(
     () => {
-      if(label === 'Clear') {
-        setResult('');
-        return;
+      switch(label) {
+        case 'Clear':
+          setResult('');
+          return;
+        case '=':
+          setResult(eval(result));
+          return;
+        default:
+          setResult(result + label);
       }
-      setResult(result + label)
     },
     [label, result, setResult],
   );
