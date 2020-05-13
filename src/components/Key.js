@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Key = styled.button`
   height: 30px;
+  margin: 2px 0;
   padding: 0 4px;
   width: 70px;
 `;

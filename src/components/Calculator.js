@@ -6,7 +6,8 @@ import Display from './Display';
 
 const Calculator = styled.div`
   align-items: center;
-  border: 1px black solid;
+  border: 1px #888888 solid;
+  box-shadow: 1px 1px 1px #888888;
   display: flex;
   flex-direction: column;
   padding: 10px;
